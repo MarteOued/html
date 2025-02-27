@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Tâches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-button {
+            background-color: #ff4d4d;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Liste de Tâches</h1>
+    <input type="text" id="taskInput" placeholder="Ajouter une nouvelle tâche">
+    <button id="addTaskButton">Ajouter</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        const taskInput = document.getElementById('taskInput'); //const taskInput : Récupère l'élément <input> en utilisant getElementById pour pouvoir lire le texte saisi par l'utilisateur.
+        const addTaskButton = document.getElementById('addTaskButton'); // const addTaskButton : Récupère le bouton qui permet d'ajouter la tâche.
+        const taskList = document.getElementById('taskList'); // const taskList : Récupère l'élément <ul> où les tâches seront affichées.
+
+        addTaskButton.addEventListener('click', () => { // addTaskButton.addEventListener('click', ... : Ajoute un écouteur d'événements au bouton.
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                const li = document.createElement('li'); // const li = document.createElement('li'); : Crée un nouvel élément de liste (<li>).
+                li.textContent = taskText;
+
+                const deleteButton = document.createElement('button'); // Crée un nouveau bouton pour supprimer la tâche.
+                deleteButton.textContent = 'Supprimer';
+                deleteButton.className = 'delete-button';
+                deleteButton.onclick = () => {
+                    taskList.removeChild(li);
+                };
+
+                li.appendChild(deleteButton);
+                taskList.appendChild(li);
+                taskInput.value = '';
+            }
+        });
+    </script>
+
+</body>
+</html>
