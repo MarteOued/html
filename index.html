@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header id = "idheader">
+        <h1>HELLO</h1>
+        <span class="classname">
+            test
+        </span>
+    </header>
+    <!--script-->
+    <script>
+        const header = document.getElementById("idheader") //  Sélectionne l'élément HTML unique qui a l'id="idheader"
+        const span = document.getElementsByClassName("classname")//Sélectionne tous les éléments qui ont la classe "classname"
+        const h1 = document.getElementsByTagName("h1") //  Sélectionne tous les <h1> présents dans la page.
+
+        const variable1 = "constant"
+        let variable2 = "pas constant"
+        let character ="string"
+        let number = 1234
+
+        let var3 = null;
+        let var4;
+
+        if (1===1){
+            console.log("ok")
+        }else {
+            console.log( "not ok")
+        }
+
+        if (1===2){
+            console.log("ok")
+        }else {
+            console.log( "not ok")
+        }
+
+        if (typeof 1 === typeof"1"){
+            console.log("ok")
+        }else {
+            console.log( "vas jouer")
+        }
+       
+        for (let i=0; i < 10; i++) {
+            console.log(i)
+        }
+        for (let i=0; i < variable2.length; i++) {
+            console.log(variable2[i])
+        }
+
+        tableau = [
+            "bonsoir",
+            9657,
+            null,
+            "Marte",
+            undefined
+        ]
+
+        for (let i=0; i < tableau.length; i++) {
+            console.log(tableau[i])
+            console.log(typeof tableau[i])
+            
+        }
+
+        for (let i=0; i < tableau.length; i++) {
+
+            if (typeof tableau[i] === "string") { 
+            console.log("type string"); 
+            } else{ 
+                console.log(" not type string")
+            }
+        }
+
+        for (let i=0; i < tableau.length; i++) {
+
+            if (typeof tableau[i] === "string") { 
+                console.log("type string"); 
+            } 
+            else if (typeof tableau[i] === "number") {
+                console.log("type number");
+            }
+           
+            else { 
+                console.log(" not type string and number")
+            }
+        }
+
+        const objet1 = []
+        const objet2 = {
+            ins1:"string",
+            ins2: 1234,
+            ins3: ["hello", "word"],
+            ins4: {
+                name: "XYZ",
+                url: "#"
+            },
+            ins5: function(){console.log("Hi! i am a function")},
+            ins6:[
+                {
+                    ins1: 123,
+                    ins2:"",
+                    ins3: function(){},
+                    ins4: ["", 1, null, variable1]
+                }
+
+            ]
+        }
+
+        function sum(x, y) {
+            return x + y
+        }
+
+        function sus(x, y) {
+            return x - y
+        }
+
+        function mul(x, y) {
+            return x * y
+        }
+
+        function div(x, y) { // div(3,2)
+            return x / y
+        }
+        const tab1 = [] //pour ahouter qlq chose dans la table on fait tab2.push("hello")
+        
+
+
+    </script>
+</body>
+</html>
